@@ -12,11 +12,16 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: ".env" });
 
+// app.use(
+//   cors({
+//     origin: [process.env.FRONTEND_URL],
+//     method: ["GET", "POST", "DELETE", "PUT"],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
-    method: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
+    origin: "*",
   })
 );
 
