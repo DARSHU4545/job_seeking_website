@@ -19,7 +19,13 @@ const Login = () => {
     try {
       const { data } = await axios.post(
         `https://job-seeking-website-8n0b.onrender.com/api/v1/user/login`,
-        { email, password, role }
+        { email, password, role },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
       );
       toast.success(data.message);
       setEmail("");

@@ -23,7 +23,10 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "https://job-seeking-website-8n0b.onrender.com/api/v1/user/getuser"
+          "https://job-seeking-website-8n0b.onrender.com/api/v1/user/getuser",
+          {
+            withCredentials: true,
+          }
         );
         setUser(response.data.user);
         setIsAuthorized(true);
