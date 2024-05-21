@@ -14,13 +14,13 @@ config({ path: ".env" });
 
 app.use(
   cors({
-    origin: true,
+    origin: ["https://job-seeking-website-darshan.vercel.app"],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
 
-app.use(cors());
+
 
 app.use(cookieParser());
 app.use(express.json());
