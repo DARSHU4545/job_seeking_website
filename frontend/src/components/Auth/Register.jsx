@@ -23,13 +23,7 @@ const Register = () => {
     try {
       const { data } = await axios.post(
         "https://job-seeking-website-8n0b.onrender.com/api/v1/user/register",
-        { name, phone, email, role, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
+        { name, phone, email, role, password }
       );
       toast.success(data.message);
       setName("");

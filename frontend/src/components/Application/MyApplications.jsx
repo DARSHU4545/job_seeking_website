@@ -52,10 +52,7 @@ const MyApplications = () => {
     try {
       axios
         .delete(
-          `https://job-seeking-website-8n0b.onrender.com/api/v1/application/delete/${id}`,
-          {
-            withCredentials: true,
-          }
+          `https://job-seeking-website-8n0b.onrender.com/api/v1/application/delete/${id}`
         )
         .then((res) => {
           toast.success(res.data.message);
