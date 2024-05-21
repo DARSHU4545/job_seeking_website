@@ -21,7 +21,7 @@ config({ path: ".env" });
 // );
 app.use(
   cors({
-    origin: "*",
+    origin: "https://job-seeking-website-darshan.vercel.app",
   })
 );
 
