@@ -11,7 +11,7 @@ const Jobs = () => {
     try {
       axios
         .get(
-          "https://job-seeking-website-6447.onrender.com/api/v1/job/getall",
+          "https://job-seeking-website-n46g.onrender.com/api/v1/job/getall",
           {
             withCredentials: true,
           }
