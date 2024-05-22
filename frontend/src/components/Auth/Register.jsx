@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://job-seeking-website-8n0b.onrender.com/api/v1/user/register",
+        "http://localhost:8000/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -31,7 +31,6 @@ const Register = () => {
           withCredentials: true,
         }
       );
-
       toast.success(data.message);
       setName("");
       setEmail("");
@@ -39,12 +38,14 @@ const Register = () => {
       setPhone("");
       setRole("");
       setIsAuthorized(true);
-      <Navigate to={"/"} />;
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
-  console.log(isAuthorized);
+
+  if (isAuthorized) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
     <>
