@@ -14,10 +14,7 @@ config({ path: ".env" });
 
 app.use(
   cors({
-    origin: [
-      "https://job-seeking-website-darshan.vercel.app",
-      "http://localhost:5173",
-    ],
+    origin: [`${process.env.FRONTEND_URL}`, "http://localhost:5173"],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
